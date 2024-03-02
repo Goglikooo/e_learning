@@ -398,6 +398,43 @@ header {
     transform: scale(1.1);
 }
 
+
+.delete_course_container{
+    height: 200px;
+    backdrop-filter: blur(50px);
+    text-align: center;
+    height: calc(100vh - 60px);
+    color: #a52828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delete_course_container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.delete_course_container form button {
+    width: 100%;
+    background-color: #a52828;
+    color: #bebdbd;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.delete_course_container form button:hover{
+    background-color: #f93d3d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 /* responsive design */
 @media(max-width: 992px){
     .navbar .links, 

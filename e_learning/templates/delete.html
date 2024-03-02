@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Are you Sure?</h1>
+{% extends 'index.html' %}
 
-<p>you are deleting the course: {{course.name}}</p>
+{% block content %}
+    <div class="delete_course_container">
+        <h1>You are deleting the course: {{course.name}}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <p>By clicking "DELETE" button, you will delete course: {{course.name}}</p>
+            <button type="submit">DELETE</button>
+        </form>
+    </div>
 
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">DELETE</button>
-</form>
-</body>
-</html>
+
+{% endblock %}
