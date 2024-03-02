@@ -3,7 +3,6 @@ from .models import Course, Enrollment
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required,  permission_required
-from django.urls import reverse
 
 
 @login_required(login_url='/login')
