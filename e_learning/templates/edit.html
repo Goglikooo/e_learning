@@ -1,27 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Course</title>
-</head>
-<body>
-    <form method="post" style="display: flex; justify-content: center; align-items: center; flex-direction: column;  gap: 10px;">
-        {% csrf_token %}
+{% extends 'index.html' %}
 
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{course.name}}">
+{% block content %}
+    <div class="add_container">
+        <form method="post" class="add_form_container">
+            {% csrf_token %}
 
-        <label for="description">description</label>
-        <input type="text" name="description" id="nadescriptionme" value="{{course.description}}">
+            <div class="add_input_field">
+                <label for="name">Course Name</label>
+                <input type="text" name="name" id="name" value="{{course.name}}" required>
+            </div>
+            
+            <div class="add_input_field">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="{{course.description}}" required>
+            </div>
 
-        <label for="category">category</label>
-        <input type="text" name="category" id="category" value="{{ course.category }}">
+            <div class="add_input_field">
+                <label for="category">Category</label>
+                <input type="text" name="category" id="category" value="{{ course.category }}" required>
+            </div>
 
-        <label for="url">url</label>
-        <input type="text" name="url" id="url" value="{{ course.url }}">
+            <div class="add_input_field">
+                <label for="url">Photo URL</label>
+                <input type="text" name="url" id="url" value="{{ course.url }}" required>
+            </div>
 
-        <button type="submit">Add</button>
-    </form>
-</body>
-</html>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+{% endblock %}

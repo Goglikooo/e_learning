@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="#">E-Learning</a></div>
+            <div class="logo"><a href="{% url 'index'%}">E-Learning</a></div>
             {% if user.is_authenticated %}
                 <ul class="links">
                     <li><a href="{% url 'index' %}">All Courses</a></li>

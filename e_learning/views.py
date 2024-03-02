@@ -128,7 +128,4 @@ def delete_course(request, name):
     return render(request, 'delete.html', {'course': course})
 
 
-@login_required(login_url='index')
-def view_schedule(request):
-    return render(request, 'schedule.html')
 
