@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="courses_container">
+    {% for item in user_enrollments %}
+        {% if not item.is_done  %}
+            <div class="card">
+        {% else %}
+            <div class="card done">
+        {% endif %}
+            <div class="card_info">
+            <div class="category">{{ item.course.category }}</div>
+            <img src="{{ item.course.url }}" alt="">
+            <h2 class="title">{{ item.course.name }}</h2>
+            <div class="description">{{ item.course.description }}</div>
+            <div class="info">
+                {% if not item.is_done  %}
+                    <a href="{% url 'complete' item.course.name %}" class="mark_complete">Mark as complete</a>
+                    <a href="{% url 'delete_progress' item.course.name %}" class="delete_from_progress">Delete course from progress</a>
+                {% else %}
+                    <div><p>COMPLETE</p></div>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

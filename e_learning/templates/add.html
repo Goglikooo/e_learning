@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="add_container">
+        <form method="post" class="add_form_container">
+            {% csrf_token %}
+
+            <div class="add_input_field">
+                <label for="name">Course Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            
+            <div class="add_input_field">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description">
+            </div>
+
+            <div class="add_input_field">
+                <label for="category">Category</label>
+                <input type="text" name="category" id="category">
+            </div>
+
+            <div class="add_input_field">
+                <label for="url">Photo URL</label>
+                <input type="text" name="url" id="url">
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+{% endblock %}

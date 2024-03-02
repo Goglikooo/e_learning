@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Course details</h1>
+        <div class="course_details">
+            <h3>Course Name: {{course.name}}</h3>
+            <p>Descritpion: {{course.description}}</p>
+            <p>Category: {{course.category}}</p> 
+            <div style="display: flex; justify-content: flex-start; align-items: center; gap: 10px;">
+                <a href="{% url 'index' %}" style="border: 1px solid black; padding: 5px; background-color: rgb(255, 0, 0); text-decoration: none; color: white;">back</a>
+                
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" style="border: 1px solid black; padding: 5px; background-color: rgb(0, 255, 106); ">Add to Schedule</button> 
+                    </form>
+            </div>   
+        </div>
+{% endblock %}

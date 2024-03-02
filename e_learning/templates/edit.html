@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+</head>
+<body>
+    <form method="post" style="display: flex; justify-content: center; align-items: center; flex-direction: column;  gap: 10px;">
+        {% csrf_token %}
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{course.name}}">
+
+        <label for="description">description</label>
+        <input type="text" name="description" id="nadescriptionme" value="{{course.description}}">
+
+        <label for="category">category</label>
+        <input type="text" name="category" id="category" value="{{ course.category }}">
+
+        <label for="url">url</label>
+        <input type="text" name="url" id="url" value="{{ course.url }}">
+
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
